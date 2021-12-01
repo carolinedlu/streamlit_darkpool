@@ -66,7 +66,7 @@ display_links(readme["links"]["repo"], readme["links"]["repo"])
 
 
 
-st.sidebar.title("1. Data")
+st.sidebar.title("Configure your analysis")
 
 # Load data
 with st.sidebar.beta_expander("Dataset", expanded=True):
@@ -74,12 +74,10 @@ with st.sidebar.beta_expander("Dataset", expanded=True):
     df, empty_cols = remove_empty_cols(df)
     print_empty_cols(empty_cols)
 
-# Column names
+# Column names - change to target variable
 with st.sidebar.beta_expander("Columns", expanded=True):
     date_col, target_col = input_columns(config, readme, df, load_options)
     df = format_date_and_target(df, date_col, target_col, config, load_options)
-
-
 
 
 # Launch analysis
