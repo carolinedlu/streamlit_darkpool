@@ -77,7 +77,7 @@ with st.sidebar.beta_expander("Columns", expanded=True):
     if dataset == 'Credit Card Fraud':   
         column = st.selectbox('Select your target outcome variable',('ISFRAUD','ISFLAGGEDFRAUD'))
     if dataset == 'Churn':   
-    st.write("No dataset is available")
+        st.write("No dataset is available")
 
 # Launch analysis
 with st.sidebar.beta_expander("Boost", expanded=True):
