@@ -89,4 +89,4 @@ if st.checkbox(
     help=readme["tooltips"]["launch_forecast"],
 ):
 
-    if not st.text ("Launch")
+    if not st.text ('Launch')
