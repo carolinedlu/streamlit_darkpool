@@ -99,3 +99,10 @@ if st.checkbox(
 ):
 
   st.text ('Boost')
+
+
+analysis = st.radio ("Choose analysis on your own dataset only or with dark pool boost",('None','Own Set','BOOST'))
+if analysis == 'Own Set': 
+    st.write('You selected ML analysis on your own data set only.')
+if analysis == 'BOOST': 
+    st.write('You selected to boost your ML accuracy with data from the dark pool.')
