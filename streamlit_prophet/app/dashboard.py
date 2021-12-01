@@ -235,7 +235,7 @@ if st.checkbox(
 
 """
 
-# Visualizations
+    # Visualizations
 
     if evaluate | make_future_forecast:
         st.write("# 1. Overview")
