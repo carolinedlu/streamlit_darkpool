@@ -70,15 +70,14 @@ st.sidebar.title("Configure your analysis")
 
 # Select Dataset
 with st.sidebar.beta_expander("Data", expanded=True):
-    dataset = st.selectbox('Select your dataset for analysis',('Credit Card Fraud','Other Fraud'))
+    dataset = st.selectbox('Select your dataset for analysis',('Credit Card Fraud','Churn'))
 
 # Column names - change to target variable
 with st.sidebar.beta_expander("Columns", expanded=True):
- if dataset == 'Credit Card Fraud':   
+if dataset == 'Credit Card Fraud':   
     column = st.selectbox('Select your target outcome variable',('ISFRAUD','ISFLAGGEDFRAUD'))
- elif dataset == 'Other Fraud':
-    column = st.selectbox('Select your target outcome variable',('ISOTHERFRAUD','ISOTHERFLAGGEDFRAUD))
-
+if dataset == 'Churn':   
+st.write("No dataset is available")
 
 # Launch analysis
 with st.sidebar.beta_expander("Boost", expanded=True):
