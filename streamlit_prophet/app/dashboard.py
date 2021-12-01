@@ -200,6 +200,8 @@ if st.checkbox(
         dimensions,
         load_options,
     )
+
+"""
 # Launch Boost 
 if st.checkbox(
     "Launch Boost",
@@ -230,7 +232,9 @@ if st.checkbox(
         dimensions,
         load_options,
     )
- 
+
+"""
+
 # Visualizations
 
     if evaluate | make_future_forecast:
