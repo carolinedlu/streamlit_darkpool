@@ -77,7 +77,7 @@ with st.sidebar.beta_expander("Columns", expanded=True):
  if dataset == 'Credit Card Fraud':   
     column = st.selectbox('Select your target outcome variable',('ISFRAUD','ISFLAGGEDFRAUD'))
  elif dataset == 'Other Fraud':
-    column = st.selectbox('Select your target outcome variable',('ISOTHERFRAUD'))
+    column = st.selectbox('Select your target outcome variable',("ISOTHERFRAUD"))
 
 
 # Launch analysis
