@@ -45,7 +45,7 @@ from streamlit_prophet.lib.models.prophet import forecast_workflow
 from streamlit_prophet.lib.utils.load import load_config, load_image
 
 # Page config
-st.set_page_config(page_title="Prophet", layout="wide")
+st.set_page_config(page_title="Darkpool", layout="wide")
 
 # Load config
 config, instructions, readme = load_config(
