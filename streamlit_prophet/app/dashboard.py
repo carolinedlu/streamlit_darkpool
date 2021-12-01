@@ -78,7 +78,7 @@ with st.sidebar.beta_expander("Dataset", expanded=True):
 with st.sidebar.beta_expander("Columns", expanded=True):
     date_col, target_col = input_columns(config, readme, df, load_options)
     df = format_date_and_target(df, date_col, target_col, config, load_options)
-
+"""
 # Filtering
 with st.sidebar.beta_expander("Filtering", expanded=False):
     dimensions = input_dimensions(df, readme, config)
@@ -122,7 +122,7 @@ with st.sidebar.beta_expander("Other parameters", expanded=False):
     df = add_cap_and_floor_cols(df, params)
 
 st.sidebar.title("3. Evaluation")
-
+"""
 # Choose whether or not to do evaluation
 evaluate = st.sidebar.checkbox(
     "Evaluate my model", value=True, help=readme["tooltips"]["choice_eval"]
