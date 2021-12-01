@@ -83,25 +83,8 @@ with st.sidebar.beta_expander("Columns", expanded=True):
 
 
 # Launch analysis
-if st.checkbox(
-    "Launch Analysis",
-    value=False,
-    help=readme["tooltips"]["launch_forecast"],
-):
-
-  st.text ('Launch')
-
-# Launch Boost
-if st.checkbox(
-    "Launch Boost",
-    value=False,
-    help=readme["tooltips"]["launch_forecast"],
-):
-
-  st.text ('Boost')
-
-
-analysis = st.radio ("Choose analysis on your own dataset only or with dark pool boost",('None','Own Set','BOOST'))
+st.write('Choose the data sets for your analysis')
+analysis = st.radio ("",('None','Own Set','BOOST'))
 if analysis == 'Own Set': 
     st.write('You selected ML analysis on your own data set only.')
 if analysis == 'BOOST': 
