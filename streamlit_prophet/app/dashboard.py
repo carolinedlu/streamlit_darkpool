@@ -82,6 +82,6 @@ with st.sidebar.beta_expander("Boost", expanded=True):
 #    st.write("Choose the data sets for your analysis:")
     analysis = st.radio ("",('None','Own Set','BOOST'))
     if analysis == 'Own Set': 
-    st.write('You selected ML analysis on your own data set only.')
+        st.write('You selected ML analysis on your own data set only.')
     if analysis == 'BOOST': 
-    st.write('You selected to boost your ML accuracy with data from the dark pool.')
+        st.write('You selected to boost your ML accuracy with data from the dark pool.')
