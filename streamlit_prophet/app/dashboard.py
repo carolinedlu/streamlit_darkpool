@@ -70,18 +70,18 @@ st.sidebar.title("Configure your analysis")
 
 # Select Dataset
 with st.sidebar.beta_expander("Data", expanded=True):
-dataset = st.selectbox('Select your dataset for analysis',('Fraud','Churn'))
+    dataset = st.selectbox('Select your dataset for analysis',('Fraud','Churn'))
 
 # Column names - change to target variable
 with st.sidebar.beta_expander("Columns", expanded=True):
-column = st.selectbox('Select your target outcome variable',('Fraud','Churn'))
+    column = st.selectbox('Select your target outcome variable',('Fraud','Churn'))
 
 
 # Launch analysis
 with st.sidebar.beta_expander("Boost", expanded=True):
-st.write('Choose the data sets for your analysis:')
-analysis = st.radio ("",('None','Own Set','BOOST'))
-if analysis == 'Own Set': 
+    st.write('Choose the data sets for your analysis:')
+    analysis = st.radio ("",('None','Own Set','BOOST'))
+    if analysis == 'Own Set': 
     st.write('You selected ML analysis on your own data set only.')
-if analysis == 'BOOST': 
+    if analysis == 'BOOST': 
     st.write('You selected to boost your ML accuracy with data from the dark pool.')
