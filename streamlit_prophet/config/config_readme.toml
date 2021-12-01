@@ -1,14 +1,14 @@
 [app]
 app_intro = """
-This app allows you to train, evaluate and optimize a Prophet model in just a few clicks.
-All you have to do is to upload a time series dataset, and follow the guidelines in the sidebar to:
-* __Prepare data__: Filter, aggregate, resample and/or clean your dataset.
-* __Choose model parameters__: Default parameters are available but you can tune them.
-Look at the tooltips to understand how each parameter is impacting forecasts.
-* __Select evaluation method__: Define the evaluation process, the metrics and the granularity to
-assess your model performance.
-* __Make a forecast__: Make a forecast on future dates that are not included in your dataset,
-with the model previously trained. \n
+This app allows you to securely turn a large dark pool of data sets into economic value, by mining it and using derived signals to boost your 
+ML models.  The economic return will be shared with the dark pool data owners.
+
+All you have to do is:
+* __Select your dataset__: Choose your dataset.
+* __Select your outcome variable__: Choose your dependent variable for ML prediction.
+* __Run your analysis__: Run your ML model on solely your set of data. 
+* __Boost your analysis__: Select BOOST to increase the acccuracy of your ML model by provisioning data sets from the dark pool. 
+ \n
 
 
 Once you are satisfied, click on "save experiment" to download all plots and data locally.
