@@ -82,11 +82,20 @@ with st.sidebar.beta_expander("Columns", expanded=True):
 
 
 
-# Launch training
+# Launch analysis
 if st.checkbox(
-    "Launch analysis",
+    "Launch Analysis",
     value=False,
     help=readme["tooltips"]["launch_forecast"],
 ):
 
   st.text ('Launch')
+
+# Launch Boost
+if st.checkbox(
+    "Launch Boost",
+    value=False,
+    help=readme["tooltips"]["launch_forecast"],
+):
+
+  st.text ('Boost')
