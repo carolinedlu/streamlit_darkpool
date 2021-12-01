@@ -80,7 +80,7 @@ with st.sidebar.beta_expander("Columns", expanded=True):
 # Launch analysis
 with st.sidebar.beta_expander("Boost", expanded=True):
 #    st.write("Choose the data sets for your analysis:")
-    analysis = st.radio ("",('None','Own Set','BOOST'))
+    analysis = st.radio ("Choose the data sets for your analysis:",('None','Own Set','BOOST'))
     if analysis == 'Own Set': 
         st.write('You selected ML analysis on your own data set only.')
     if analysis == 'BOOST': 
