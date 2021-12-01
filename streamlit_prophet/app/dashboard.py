@@ -91,12 +91,12 @@ with st.sidebar.beta_expander("Boost", expanded=True):
 
 # Visualizations        
  
-st.title("1. Overview (visualization of data)")
+st.header("1. Overview (visualization of data)")
 st.write("")
-st.title("2. Evaluation on dataset (includes performance metrics like MAPE SMAPE, MS)")
+st.header("2. Evaluation on dataset (includes performance metrics like MAPE SMAPE, MS)")
 st.write(readme["plots"][ "metrics"])
 st.write("")
-st.title("3. Impact of components and regressors")
+st.header("3. Impact of components and regressors")
 st.write("")
 
 
