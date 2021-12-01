@@ -91,33 +91,17 @@ with st.sidebar.beta_expander("Boost", expanded=True):
 
 # Visualizations        
  
-st.write("# 1. Overview")
-report = plot_overview(
-make_future_forecast, use_cv, models, forecasts, target_col, cleaning, readme, report)
+st.write("1. Overview (visualization of data)"
 
 
-st.write(f'# 2. Evaluation on {"CV" } {eval["set"].lower()} set{"s"}')
-report = plot_performance(
-use_cv, target_col, datasets, forecasts, dates, eval, resampling, config, readme, report)
+
+st.write("2. Evaluation on dataset (includes performance metrics like MAPE SMAPE, MS")
+st.write(metrics)
 
 
-st.write("# 3. Impact of components and regressors")
-report = plot_components(
-   use_cv,
-   make_future_forecast,
-   target_col,
-   models,
-   forecasts,
-   cleaning,
-   resampling,
-   config,
-   readme,
-   df,
-   report,
-        )
+st.write("3. Impact of components and regressors")
 
-   
-st.write("# 4. Future forecast")
-report = plot_future(models, forecasts, dates, target_col, cleaning, readme, report)
+
+
 
 
