@@ -68,19 +68,17 @@ display_links(readme["links"]["repo"], readme["links"]["repo"])
 
 st.sidebar.title("Configure your analysis")
 
-# Load data
-with st.sidebar.beta_expander("Dataset", expanded=True):
-    df, load_options, config, datasets = input_dataset(config, readme, instructions)
-    df, empty_cols = remove_empty_cols(df)
-    print_empty_cols(empty_cols)
+# Select Dataset
+with st.sidebar.beta_expander("Data", expanded=True):
+dataset = st.selectbox('Select your dataset for analysis',('Fraud','Churn'))
 
 # Column names - change to target variable
 with st.sidebar.beta_expander("Columns", expanded=True):
-    date_col, target_col = input_columns(config, readme, df, load_options)
-    df = format_date_and_target(df, date_col, target_col, config, load_options)
+column = st.selectbox('Select your target outcome variable',('Fraud','Churn'))
 
 
 # Launch analysis
+with st.sidebar.beta_expander("Boost", expanded=True):
 st.write('Choose the data sets for your analysis:')
 analysis = st.radio ("",('None','Own Set','BOOST'))
 if analysis == 'Own Set': 
