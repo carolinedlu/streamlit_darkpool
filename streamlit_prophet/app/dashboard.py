@@ -168,9 +168,9 @@ if make_future_forecast:
             datasets, dates, params, dimensions, load_options, date_col
         )
 
-# Launch training & forecast
+# Launch training
 if st.checkbox(
-    "Launch forecast",
+    "Launch analysis",
     value=False,
     help=readme["tooltips"]["launch_forecast"],
 ):
@@ -198,7 +198,37 @@ if st.checkbox(
         dimensions,
         load_options,
     )
+    
+# Launch boost
+if st.checkbox(
+    "Launch boost",
+    value=False,
+    help=readme["tooltips"]["launch_boost"],
+):
 
+    if not (evaluate | make_future_forecast):
+        st.error("Please check at least 'Evaluation' or 'Forecast' in the sidebar.")
+
+    track_experiments = st.checkbox(
+        "Track experiments", value=False, help=readme["tooltips"]["track_experiments"]
+    )
+
+    datasets, models, forecasts = forecast_workflow(
+        config,
+        use_cv,
+        make_future_forecast,
+        evaluate,
+        cleaning,
+        resampling,
+        params,
+        dates,
+        datasets,
+        df,
+        date_col,
+        target_col,
+        dimensions,
+        load_options,
+    )
     # Visualizations
 
     if evaluate | make_future_forecast:
