@@ -98,7 +98,7 @@ with st.sidebar.beta_expander("Boost", expanded=True):
 
 
         st.write(
-            f'# 2. Evaluation on {"CV" if use_cv else ""} {eval["set"].lower()} set{"s" if use_cv else ""}'
+            f'# 2. Evaluation on {"CV" } {eval["set"].lower()} set{"s"}'
         )
         report = plot_performance(
             use_cv, target_col, datasets, forecasts, dates, eval, resampling, config, readme, report
@@ -107,8 +107,7 @@ with st.sidebar.beta_expander("Boost", expanded=True):
 
         st.write(
             "# 3. Impact of components and regressors"
-            if evaluate
-            else "# 2. Impact of components and regressors"
+           
         )
         report = plot_components(
             use_cv,
@@ -125,7 +124,7 @@ with st.sidebar.beta_expander("Boost", expanded=True):
         )
 
    
-        st.write("# 4. Future forecast" if evaluate else "# 3. Future forecast")
+        st.write("# 4. Future forecast")
         report = plot_future(models, forecasts, dates, target_col, cleaning, readme, report)
 
 
