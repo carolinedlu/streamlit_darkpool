@@ -78,6 +78,7 @@ with st.sidebar.beta_expander("Dataset", expanded=True):
 with st.sidebar.beta_expander("Columns", expanded=True):
     date_col, target_col = input_columns(config, readme, df, load_options)
     df = format_date_and_target(df, date_col, target_col, config, load_options)
+
 """
 # Filtering
 with st.sidebar.beta_expander("Filtering", expanded=False):
@@ -121,8 +122,8 @@ with st.sidebar.beta_expander("Other parameters", expanded=False):
     params = input_other_params(config, params, readme)
     df = add_cap_and_floor_cols(df, params)
 
-
-st.sidebar.title("3. Evaluation")
+"""
+st.sidebar.title("2. Evaluation")
 
 # Choose whether or not to do evaluation
 evaluate = st.sidebar.checkbox(
@@ -168,7 +169,7 @@ if make_future_forecast:
         datasets = input_future_regressors(
             datasets, dates, params, dimensions, load_options, date_col
         )
-"""
+
 # Launch training 
 if st.checkbox(
     "Launch Model",
