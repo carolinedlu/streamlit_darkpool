@@ -78,51 +78,8 @@ with st.sidebar.beta_expander("Dataset", expanded=True):
 with st.sidebar.beta_expander("Columns", expanded=True):
     date_col, target_col = input_columns(config, readme, df, load_options)
     df = format_date_and_target(df, date_col, target_col, config, load_options)
-"""
-# Filtering
-with st.sidebar.beta_expander("Filtering", expanded=False):
-    dimensions = input_dimensions(df, readme, config)
-    df, cols_to_drop = filter_and_aggregate_df(df, dimensions, config, date_col, target_col)
-    print_removed_cols(cols_to_drop)
 
-# Resampling
-with st.sidebar.beta_expander("Resampling", expanded=False):
-    resampling = input_resampling(df, readme)
-    df = format_datetime(df, resampling)
-    df = resample_df(df, resampling)
-    check_dataset_size(df, config)
 
-# Cleaning
-with st.sidebar.beta_expander("Cleaning", expanded=False):
-    cleaning = input_cleaning(resampling, readme, config)
-    df = clean_df(df, cleaning)
-    check_dataset_size(df, config)
-
-st.sidebar.title("2. Modelling")
-
-# Prior scale
-with st.sidebar.beta_expander("Prior scale", expanded=False):
-    params = input_prior_scale_params(config, readme)
-
-# Seasonalities
-with st.sidebar.beta_expander("Seasonalities", expanded=False):
-    params = input_seasonality_params(config, params, resampling, readme)
-
-# Holidays
-with st.sidebar.beta_expander("Holidays"):
-    params = input_holidays_params(params, readme, config)
-
-# External regressors
-with st.sidebar.beta_expander("Regressors"):
-    params = input_regressors(df, config, params, readme)
-
-# Other parameters
-with st.sidebar.beta_expander("Other parameters", expanded=False):
-    params = input_other_params(config, params, readme)
-    df = add_cap_and_floor_cols(df, params)
-
-st.sidebar.title("3. Evaluation")
-"""
 # Choose whether or not to do evaluation
 evaluate = st.sidebar.checkbox(
     "Evaluate my model", value=True, help=readme["tooltips"]["choice_eval"]
