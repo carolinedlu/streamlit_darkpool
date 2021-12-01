@@ -9,14 +9,15 @@ All you have to do is:
 * __Run your analysis__: Run your ML model on solely your set of data. 
 * __Boost your analysis__: Select BOOST to increase the acccuracy of your ML model by provisioning data sets from the dark pool. 
  \n
-
-
-Once you are satisfied, click on "save experiment" to download all plots and data locally.
 """
 
 [tooltips]
 launch_forecast = """
-Check to launch forecast. A new forecast will be made each time some parameter is changed in the sidebar.
+Check to launch forecast. 
+"""
+
+boost_forecast = """
+Check to boost forecast.
 """
 track_experiments = """
 Check to get a link to download a report at the bottom of the page.
