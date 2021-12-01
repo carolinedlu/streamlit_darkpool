@@ -45,7 +45,7 @@ from streamlit_prophet.lib.models.prophet import forecast_workflow
 from streamlit_prophet.lib.utils.load import load_config, load_image
 
 # Page config
-st.set_page_config(page_title="Darkpool", layout="wide")
+st.set_page_config(page_title="darkpool", layout="wide")
 
 # Load config
 config, instructions, readme = load_config(
@@ -57,12 +57,12 @@ dates: Dict[Any, Any] = dict()
 report: List[Dict[str, Any]] = []
 
 # Info
-with st.beta_expander("What is this app?", expanded=False):
+with st.beta_expander("What is darkpool?", expanded=False):
     st.write(readme["app"]["app_intro"])
     st.write("")
 st.write("")
 st.sidebar.image(load_image("darkpool.png"), use_column_width=True)
-display_links(readme["links"]["repo"], readme["links"]["article"])
+display_links(readme["links"]["repo"])
 
 
 st.sidebar.title("1. Data")
@@ -73,11 +73,12 @@ with st.sidebar.beta_expander("Dataset", expanded=True):
     df, empty_cols = remove_empty_cols(df)
     print_empty_cols(empty_cols)
 
+
 # Column names
 with st.sidebar.beta_expander("Columns", expanded=True):
     date_col, target_col = input_columns(config, readme, df, load_options)
     df = format_date_and_target(df, date_col, target_col, config, load_options)
-
+"""
 # Filtering
 with st.sidebar.beta_expander("Filtering", expanded=False):
     dimensions = input_dimensions(df, readme, config)
@@ -119,6 +120,7 @@ with st.sidebar.beta_expander("Regressors"):
 with st.sidebar.beta_expander("Other parameters", expanded=False):
     params = input_other_params(config, params, readme)
     df = add_cap_and_floor_cols(df, params)
+
 
 st.sidebar.title("3. Evaluation")
 
@@ -166,10 +168,10 @@ if make_future_forecast:
         datasets = input_future_regressors(
             datasets, dates, params, dimensions, load_options, date_col
         )
-
-# Launch training & forecast
+"""
+# Launch training 
 if st.checkbox(
-    "Launch forecast",
+    "Launch Model",
     value=False,
     help=readme["tooltips"]["launch_forecast"],
 ):
@@ -197,8 +199,38 @@ if st.checkbox(
         dimensions,
         load_options,
     )
+# Launch Boost 
+if st.checkbox(
+    "Launch Boost",
+    value=False,
+    help=readme["tooltips"]["launch_boost"],
+):
 
-    # Visualizations
+    if not (evaluate | make_future_forecast):
+        st.error("Please check at least 'Evaluation' or 'Forecast' in the sidebar.")
+
+    track_experiments = st.checkbox(
+        "Track experiments", value=False, help=readme["tooltips"]["track_experiments"]
+    )
+
+    datasets, models, forecasts = forecast_workflow(
+        config,
+        use_cv,
+        make_future_forecast,
+        evaluate,
+        cleaning,
+        resampling,
+        params,
+        dates,
+        datasets,
+        df,
+        date_col,
+        target_col,
+        dimensions,
+        load_options,
+    )
+ 
+# Visualizations
 
     if evaluate | make_future_forecast:
         st.write("# 1. Overview")
