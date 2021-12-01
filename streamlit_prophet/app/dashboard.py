@@ -75,7 +75,7 @@ with st.sidebar.beta_expander("Data", expanded=True):
 # Column names - change to target variable
 with st.sidebar.beta_expander("Columns", expanded=True):
  if dataset == 'Credit Card Fraud':   
-    column = st.selectbox('Select your target outcome variable',('ISFRAUD','ISFLAGGEDFRAUD'))
+    column = st.selectbox('Select your target outcome variable',('ISFRAUD','ISFLAGGEDFRAUD')),
  else: 
     column = st.selectbox('Select your target outcome variable',('OTHERFRAUD','OTHERFLAGGEDFRAUD))
 
