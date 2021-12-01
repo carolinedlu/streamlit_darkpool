@@ -80,50 +80,7 @@ with st.sidebar.beta_expander("Columns", expanded=True):
     df = format_date_and_target(df, date_col, target_col, config, load_options)
 
 
-# Choose whether or not to do evaluation
-evaluate = st.sidebar.checkbox(
-    "Evaluate my model", value=True, help=readme["tooltips"]["choice_eval"]
-)
 
-if evaluate:
-
-    # Split
-    with st.sidebar.beta_expander("Split", expanded=True):
-        use_cv = st.checkbox(
-            "Perform cross-validation", value=False, help=readme["tooltips"]["choice_cv"]
-        )
-        dates = input_train_dates(df, use_cv, config, resampling, dates)
-        if use_cv:
-            dates = input_cv(dates, resampling, config, readme)
-            datasets = get_train_set(df, dates, datasets)
-        else:
-            dates = input_val_dates(df, dates, config)
-            datasets = get_train_val_sets(df, dates, config, datasets)
-
-    # Performance metrics
-    with st.sidebar.beta_expander("Metrics", expanded=False):
-        eval = input_metrics(readme, config)
-
-    # Scope of evaluation
-    with st.sidebar.beta_expander("Scope", expanded=False):
-        eval = input_scope_eval(eval, use_cv, readme)
-
-else:
-    use_cv = False
-
-st.sidebar.title("4. Forecast")
-
-# Choose whether or not to do future forecasts
-make_future_forecast = st.sidebar.checkbox(
-    "Make forecast on future dates", value=False, help=readme["tooltips"]["choice_forecast"]
-)
-if make_future_forecast:
-    with st.sidebar.beta_expander("Horizon", expanded=False):
-        dates = input_forecast_dates(df, dates, resampling, config, readme)
-    with st.sidebar.beta_expander("Regressors", expanded=False):
-        datasets = input_future_regressors(
-            datasets, dates, params, dimensions, load_options, date_col
-        )
 
 # Launch training
 if st.checkbox(
