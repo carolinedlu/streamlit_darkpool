@@ -93,8 +93,10 @@ with st.sidebar.beta_expander("Boost", expanded=True):
  
 st.header("1. Overview (visualization of data)")
 st.write("")
-st.header("2. Evaluation on dataset (includes performance metrics like MAPE SMAPE, MS)")
-st.write(readme["plots"][ "metrics"])
+st.header("2. Evaluation on Dataset")
+st.subheader("Performance Metrics")
+with st.beta_expander("More info on evaluation metrics",expanded=True)
+    st.write(readme["plots"][ "metrics"])
 st.write("")
 st.header("3. Impact of components and regressors")
 st.write("")
