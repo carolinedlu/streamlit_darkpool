@@ -62,7 +62,7 @@ with st.beta_expander("What is darkpool?", expanded=True):
     st.write("")
 st.write("")
 st.sidebar.image(load_image("darkpool.png"), use_column_width=True)
-display_links(readme["links"]["repo"])
+display_links(readme["links"]["repo"],readme["links"]["repo"])
 
 
 
