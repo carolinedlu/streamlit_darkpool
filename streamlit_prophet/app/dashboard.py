@@ -1,8 +1,6 @@
 from typing import Any, Dict, List
 
 import streamlit as st
-
-
 from streamlit_prophet.lib.dataprep.clean import clean_df
 from streamlit_prophet.lib.dataprep.format import (
     add_cap_and_floor_cols,
@@ -45,8 +43,6 @@ from streamlit_prophet.lib.inputs.params import (
 )
 from streamlit_prophet.lib.models.prophet import forecast_workflow
 from streamlit_prophet.lib.utils.load import load_config, load_image
-
-
 
 # Page config
 st.set_page_config(page_title="darkpool", layout="wide")
@@ -104,8 +100,5 @@ with st.beta_expander("More info on evaluation metrics",expanded=True):
 st.write("")
 st.header("3. Impact of components and regressors")
 st.write("")
-
-
-
 
 
