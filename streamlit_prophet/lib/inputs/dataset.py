@@ -2,6 +2,8 @@ from typing import Any, Dict, Tuple
 
 import pandas as pd
 import streamlit as st
+
+"""
 from streamlit_prophet.lib.exposition.export import display_config_download_links
 from streamlit_prophet.lib.utils.load import download_toy_dataset, load_custom_config, load_dataset
 
@@ -9,7 +11,7 @@ from streamlit_prophet.lib.utils.load import download_toy_dataset, load_custom_c
 def input_dataset(
     config: Dict[Any, Any], readme: Dict[Any, Any], instructions: Dict[Any, Any]
 ) -> Tuple[pd.DataFrame, Dict[Any, Any], Dict[Any, Any], Dict[Any, Any]]:
-    """Lets the user decide whether to upload a dataset or download a toy dataset.
+    Lets the user decide whether to upload a dataset or download a toy dataset.
 
     Parameters
     ----------
