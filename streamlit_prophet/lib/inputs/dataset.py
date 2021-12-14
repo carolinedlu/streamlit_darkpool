@@ -30,7 +30,7 @@ def input_dataset(
         Lib configuration dictionary.
     dict
         Dictionary containing all datasets.
-    """
+   
     load_options, datasets = dict(), dict()
 
     
@@ -41,4 +41,4 @@ def input_dataset(
             format_func=lambda x: config["datasets"][x]["name"],
             help=readme["tooltips"]["toy_dataset"],
         )
-      
+       """
